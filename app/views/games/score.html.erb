@@ -1,0 +1,14 @@
+<h1 class="text-center my-5">Result</h1>
+
+<% if @response[:win] %>
+<div class="alert alert-success mt-5" role="alert">
+<% else %>
+<div class="alert alert-danger mt-5" role="alert">
+<% end %>
+  <%= @response[:message] %>
+</div>
+
+<p>Your score: <%= @response[:score] %></p>
+<p>Time: <%= @response[:time] %> seconds</p>
+
+<%= link_to "Play again", new_path %>
