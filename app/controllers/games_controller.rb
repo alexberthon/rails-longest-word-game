@@ -20,6 +20,7 @@ class GamesController < ApplicationController
     session[:grand_score] = 0 if session[:grand_score].nil?
     attempt = params[:attempt]
     time_to_answer = Time.parse(session[:end_time]) - Time.parse(session[:start_time])
+    time_to_answer = 1 if time_to_answer == 0
     score = 0
 
     unless valid_letters(attempt.downcase)

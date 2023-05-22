@@ -1,15 +1,15 @@
-<div class="d-flex justify-content-center my-5">
+<ul class="list-inline d-flex justify-content-center my-5">
   <% @grid.each_with_index do |letter, index| %>
-  <div class="letter" style="--animation-order: <%= index + 1 %>;">
+  <li class="letter" style="--animation-order: <%= index + 1 %>;">
     <%= letter %>
-  </div>
+  </li>
   <% end %>
-</div>
+</ul>
 
 <form action="score" method="post" data-turbo="false">
   <div id="attempt" class="input-group">
-    <input type="text" name="attempt" class="form-control form-control-lg" placeholder="Type your attempt">
-    <input class="btn btn-lg btn-primary" type="submit">
+    <input type="text" name="attempt" class="form-control form-control-lg" placeholder="Type your attempt" required>
+    <input class="btn btn-lg btn-primary" type="submit" value="Send">
   </div>
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 </form>
