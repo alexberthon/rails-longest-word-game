@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center my-5">
-  <% @grid.each do |letter| %>
-  <div class="letter">
+  <% @grid.each_with_index do |letter, index| %>
+  <div class="letter" style="--animation-order: <%= index + 1 %>;">
     <%= letter %>
   </div>
   <% end %>
